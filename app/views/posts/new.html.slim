@@ -1,0 +1,9 @@
+h1 Creando nuevo Post
+
+- if @post.errors.any?
+  = @post.errors.full_messages.to_sentence
+
+= form_for @post do |f|
+  = f.text_field :title
+  = f.text_area :body
+  = f.submit

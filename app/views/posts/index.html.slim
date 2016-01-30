@@ -1,0 +1,16 @@
+h1 Posts
+
+= link_to("Crear nuevo Post", new_post_path)
+
+.posts
+  - @posts.each do |p|
+    .post
+      div
+        = link_to "Ver Mas", post_path(p.id)
+        = link_to "Editar", edit_post_path(p.id)
+        = link_to "Destruir", post_path(p.id), method: :delete
+
+      h2= p.title
+      p= p.body
+
+    hr
